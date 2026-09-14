@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musify | Web Player</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Aesthetic Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-compact-disc spin-icon"></i>
+        </div>
+        <span class="logo-text">Musify<span class="dot">.io</span></span>
+      </a>
+
+      <div class="nav-badge">
+        <span class="pulse-dot"></span> Web Player
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Music Container -->
+  <main class="app-container">
+    
+    <!-- Player Card -->
+    <section class="player-card">
+      <div class="album-art-wrapper">
+        <img id="track-art" src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop" alt="Album Cover" class="album-art">
+      </div>
+
+      <div class="track-details">
+        <h2 id="track-title">Acoustic Breeze</h2>
+        <p id="track-artist">Benjamin Tissot</p>
+      </div>
+
+      <!-- Interactive Progress Bar -->
+      <div class="timeline-container">
+        <span id="current-time">0:00</span>
+        <div class="progress-bar-wrapper" id="progress-wrapper">
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progress-fill"></div>
+            <div class="progress-handle" id="progress-handle"></div>
+          </div>
+        </div>
+        <span id="total-duration">0:00</span>
+      </div>
+
+      <!-- Playback Controls -->
+      <div class="controls-wrapper">
+        <button class="control-btn" id="shuffle-btn" aria-label="Shuffle"><i class="fa-solid fa-shuffle"></i></button>
+        <button class="control-btn" id="prev-btn" aria-label="Previous"><i class="fa-solid fa-backward-step"></i></button>
+        <button class="control-btn play-btn" id="play-btn" aria-label="Play/Pause"><i class="fa-solid fa-play" id="play-icon"></i></button>
+        <button class="control-btn" id="next-btn" aria-label="Next"><i class="fa-solid fa-forward-step"></i></button>
+        <button class="control-btn" id="repeat-btn" aria-label="Repeat"><i class="fa-solid fa-repeat"></i></button>
+      </div>
+
+      <!-- Volume Controls -->
+      <div class="volume-container">
+        <i class="fa-solid fa-volume-high" id="volume-icon"></i>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.7">
+      </div>
+    </section>
+
+    <!-- Playlist Sidebar Card -->
+    <section class="playlist-card">
+      <div class="playlist-header">
+        <i class="fa-solid fa-list-ul"></i>
+        <h3>Playlist</h3>
+      </div>
+      <div class="playlist-items" id="playlist-items">
+        <!-- Dynamic items from JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Audio Element -->
+  <audio id="audio-player"></audio>
+
+  <script src="script4.js"></script>
+</body>
+</html>
