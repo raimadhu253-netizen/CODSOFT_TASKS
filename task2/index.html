@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Flow | To-Do List</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-title">
+        <h1><i class="fa-solid fa-list-check"></i> TaskFlow</h1>
+        <p>Stay organized and productive</p>
+      </div>
+      <button id="themeToggle" class="btn-theme" title="Toggle Dark/Light Mode">
+        <!--i class="fa-solid fa-moon"></i-->
+        <span id="themeIcon">🌙</span>
+      </button>
+    </header>
+
+    <!-- Task Counters -->
+    <div class="stats-container">
+      <div class="stat-card">
+        <span class="stat-label">Pending Tasks</span>
+        <span id="pendingCount" class="stat-value">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Completed</span>
+        <span id="completedCount" class="stat-value text-success">0</span>
+      </div>
+    </div>
+
+    <!-- Input Form -->
+    <form id="taskForm" class="task-form">
+      <div class="input-group">
+        <input type="text" id="taskInput" placeholder="What needs to be done?" autocomplete="off">
+        <button type="submit" class="btn-add"><i class="fa-solid fa-plus"></i> Add Task</button>
+      </div>
+      <small id="inputError" class="error-msg">Task title cannot be empty!</small>
+    </form>
+
+    <!-- Search & Filters -->
+    <div class="controls-container">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Search tasks...">
+      </div>
+
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="pending">Pending</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+      </div>
+    </div>
+
+    <!-- Task List -->
+    <ul id="taskList" class="task-list"></ul>
+    
+    <div id="emptyState" class="empty-state">
+      <i class="fa-regular fa-clipboard"></i>
+      <p>No tasks found. Enjoy your day!</p>
+    </div>
+  </div>
+
+  <script src="script1.js"></script>
+</body>
+</html>
